@@ -1,75 +1,41 @@
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(180deg, #d7f9f4, #ffeadd); /* mint to peach */
-  color: #666;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+:root{
+  --cw-yellow:#FFC907;
+  --cw-black:#111;
+  --cw-white:#fff;
+  --cw-bg:#f7f3ea;
+  --radius: 14px;
+  --shadow: 0 12px 28px rgba(0,0,0,.16);
+  --maxw: 1100px;
 }
+*{box-sizing:border-box}
+body{margin:0; font-family:Inter, system-ui, sans-serif; background:var(--cw-bg); color:var(--cw-black)}
 
-main {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
+/* NAV */
+header{position:sticky; top:0; z-index:30; background:rgba(255,255,255,.9); backdrop-filter:saturate(1.1) blur(6px); border-bottom:1px solid #e5e5e5}
+.nav{max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:10px 16px}
+.logo{height:28px; width:auto; display:block}
+.nav-right{display:flex; align-items:center; gap:14px}
+.btn{padding:10px 16px; border-radius:999px; font-weight:700; border:2px solid transparent; cursor:pointer}
+.btn-primary{background:var(--cw-yellow)}
+.btn-primary:hover{box-shadow:0 6px 16px rgba(255,201,7,.45)}
+.link{font-weight:600; opacity:.85}
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: #222;
-}
+/* HERO */
+.page{max-width:var(--maxw); margin:18px auto; padding:0 16px}
+.hero-card{position:relative; overflow:hidden; border-radius:var(--radius); box-shadow:var(--shadow)}
+.hero-bg{position:absolute; inset:0; background:url('img/ethiopia.jpg') center/cover no-repeat;}
+.hero{position:relative; display:flex; align-items:center; min-height:400px; color:var(--cw-white); padding:40px}
+.hero-left{max-width:600px;}
 
-p {
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  line-height: 1.6;
-}
+.kicker{display:inline-block; font-size:12px; margin-bottom:10px; font-weight:600}
+h1{font-size:clamp(26px,3.2vw,44px); line-height:1.1; margin:0; font-weight:800}
+.sub{font-size:15px; margin-top:12px; margin-bottom:18px; line-height:1.5}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap}
+.btn-outline{background:transparent; border:2px solid #fff; color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
 
-#message {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #2c6e49;
-  margin-bottom: 40px;
-  display: none;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-label {
-  display: block;
-  text-align: left;
-  font-size: 0.9rem;
-  color: #444;
-  margin-bottom: 8px;
-}
-
-input {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  font-size: 1rem;
-  width: 100%;
-}
-
-button {
-  padding: 14px;
-  background-color: #ffb6a0; /* peach tone */
-  border: none;
-  border-radius: 14px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: #ff9c80;
+@media(max-width:900px){
+  .hero{padding:30px 20px}
+  h1{font-size:28px}
+  .sub{font-size:14px}
 }
